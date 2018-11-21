@@ -30,13 +30,13 @@ pipeline {
          stage('Deploy') {
           steps {
                    sh "aws ecs list-container-instances --cluster devenv --region us-west-2"
-                   sh "aws ecs describe-container-instances --cluster devenv --container-instances 8d1208ca-53ab-4e76-8ceb-e4a1c637b179 --region us-west-2"
+                  // sh "aws ecs describe-container-instances --cluster devenv --container-instances 8d1208ca-53ab-4e76-8ceb-e4a1c637b179 --region us-west-2"
                    sh "aws ecs register-task-definition --cli-input-json file://sample.json --region us-west-2"
                    sh "aws ecs list-task-definitions --region us-west-2"
                    sh "aws ecs run-task --cluster devenv --task-definition sleep360:1 --count 1 --region us-west-2"
                    sh "aws ecs list-tasks --cluster devenv --region us-west-2" 
-                   sh "aws ecs describe-tasks --cluster devenv --task 4831f0e4-c76b-45aa-8a96-952c4341d749 --region us-west-2" 
-                   sh "aws ecs create-service --cluster devenv --service-name nbcsamplewarservice --task-definition sleep360:5 --desired-count 10 --region us-west-2"
+                   // sh "aws ecs describe-tasks --cluster devenv --task 4831f0e4-c76b-45aa-8a96-952c4341d749 --region us-west-2" 
+                  // sh "aws ecs create-service --cluster devenv --service-name nbcsamplewarservice --task-definition sleep360:5 --desired-count 10 --region us-west-2"
                    //sh "aws ecs update-service --cluster devenv --service nbcsamplewarservice --task-definition sleep360:5 --desired-count 10 --region us-west-2"
           }
        }
