@@ -1,0 +1,16 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "sleep",
+      "image": "892943703739.dkr.ecr.us-west-2.amazonaws.com/varshaapachetomcat:latest",
+      "cpu": 10,
+      "command": [
+        "sleep",
+        "360"
+      ],
+      "memory": 10,
+      "essential": true
+    }
+  ],
+  "family": "sleep360"
+}
