@@ -20,7 +20,7 @@ pipeline {
                 echo "Building.. "
                 echo "branch: ${env.BRANCH_NAME}"
                 sh "mvn clean install -DskipTests"
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
                 sh "docker build -t 892943703739.dkr.ecr.us-west-2.amazonaws.com/samplewarfilerepo:latest ."
                 sh "eval \$(aws ecr get-login --no-include-email  --region us-west-2)"
                 sh  "docker push 892943703739.dkr.ecr.us-west-2.amazonaws.com/samplewarfilerepo:latest --region us-west-2"
