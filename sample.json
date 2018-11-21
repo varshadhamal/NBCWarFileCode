@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "sleep",
-      "image": "892943703739.dkr.ecr.us-west-2.amazonaws.com/varshaapachetomcat:latest",
+      "image": "892943703739.dkr.ecr.us-west-2.amazonaws.com/samplewarfilerepo:latest",
       "cpu": 10,
       "command": [
         "sleep",
